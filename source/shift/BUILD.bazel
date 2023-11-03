@@ -1,0 +1,21 @@
+filegroup(
+    name = "shift_hdrs",
+    srcs = [
+        "shift.hpp",
+    ],
+)
+
+filegroup(
+    name = "shift_srcs",
+    srcs = [
+        "shift.cpp",
+    ],
+)
+
+cc_library(
+    name = "shift",
+    srcs = [":shift_srcs"],
+    hdrs = [":shift_hdrs"],
+    visibility = ["//:__subpackages__"],
+    include_prefix = "shift",
+)
