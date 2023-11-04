@@ -1,0 +1,8 @@
+cc_test(
+    name = "accelerator_tests",
+    srcs = ["test_accelerator.cpp"],
+    deps = [
+        "@gtest//:gtest_main",
+        "//source/accelerator:accelerator",
+    ],
+)
