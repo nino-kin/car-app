@@ -1,0 +1,33 @@
+name: Build
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: [ ubuntu-20.04 ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Docker
+        shell: bash
+        run: |
+          ${{ github.workspace }}/scripts/docker.sh setup
+
+      - name: Build
+        shell: bash
+        run: |
+          ${{ github.workspace }}/scripts/docker.sh build
+
+      - name: Test
+        shell: bash
+        run: |
+          ${{ github.workspace }}/scripts/docker.sh test
+
+      - name: Cleanup
+        shell: bash
+        run: |
+          ${{ github.workspace }}/scripts/docker.sh rmi
