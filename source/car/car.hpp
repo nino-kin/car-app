@@ -17,7 +17,7 @@
 enum class PowerState {
     OFF = 0,
     ACC,
-    POWER_ON,
+    ON,
     READY
 };
 
@@ -69,6 +69,9 @@ class Car {
         bool getFaultStatus() const;
 
     private:
+        /// @brief System check
+        void systemCheck();
+
         /// @brief Car name
         std::string name_;
 

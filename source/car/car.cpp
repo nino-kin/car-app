@@ -3,11 +3,11 @@
 std::unordered_map<PowerState, std::string> powerStateMap = {
     {PowerState::OFF, "OFF"},
     {PowerState::ACC, "ACC"},
-    {PowerState::POWER_ON, "POWER ON"},
+    {PowerState::ON, "POWER ON"},
     {PowerState::READY, "READY"}
 };
 
-Car::Car(std::string name) : name_(name), power_state_(PowerState::OFF), speed_(0) {}
+Car::Car(std::string name) : name_(name), power_state_(PowerState::OFF), speed_(0), is_fault_(true) {}
 
 Car::~Car() {}
 
@@ -16,26 +16,35 @@ std::string Car::getCarName() {
 }
 
 void Car::pushPowerSW() {
-    if (power_state_ == PowerState::OFF) {
-        if (brake_.getState() == true && speed_ == 0) {
-            power_state_ = PowerState::READY;
-        } else {
+    switch (power_state_) {
+        case PowerState::OFF:
             power_state_ = PowerState::ACC;
-        }
-    } else if (power_state_ == PowerState::ACC) {
-        if (brake_.getState() == true && speed_ == 0) {
-            power_state_ = PowerState::READY;
-        } else {
-            power_state_ = PowerState::POWER_ON;
-        }
-    } else if (power_state_ == PowerState::POWER_ON && speed_ == 0) {
-        if (brake_.getState() == true) {
-            power_state_ = PowerState::READY;
-        }
-    } else if (power_state_ == PowerState::OFF && speed_ > 0) {
-        power_state_ = PowerState::POWER_ON;
-    } else if (power_state_ == PowerState::POWER_ON || power_state_ == PowerState::READY) {
-        power_state_ = PowerState::OFF;
+            if (brake_.getState()) {
+                systemCheck();
+                power_state_ = PowerState::READY;
+            }
+            break;
+        case PowerState::ACC:
+            power_state_ = PowerState::ON;
+            systemCheck();
+            if (brake_.getState()) {
+                power_state_ = PowerState::READY;
+            }
+            break;
+        case PowerState::ON:
+            power_state_ = PowerState::OFF;
+            if (brake_.getState()) {
+                systemCheck();
+                power_state_ = PowerState::READY;
+            }
+            break;
+        case PowerState::READY:
+            power_state_ = PowerState::OFF;
+            break;
+        default:
+            is_fault_ = true;
+            std::cout << "[error] Unknown power state." << std::endl;
+            break;
     }
 }
 
@@ -90,9 +99,14 @@ void Car::displayInfo() const {
                 << "Shift: " << shift_.getShiftString() << ", "
                 << "Accelerator: " << accelerator_.getRatio() << "%, "
                 << "Brake: " << brake_.getRatio() << "%, "
-                << "Speed: " << speed_ << "km/h " << std::endl;
+                << "Speed: " << speed_ << "km/h" << std::endl;
 }
 
 bool Car::getFaultStatus() const {
     return is_fault_;
+}
+
+void Car::systemCheck() {
+    // TODO: We need to check every car parts in this process.
+    is_fault_ = false;
 }
