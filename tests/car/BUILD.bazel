@@ -1,0 +1,10 @@
+cc_test(
+    name = "car_tests",
+    srcs = [
+        "test_car.cpp",
+    ],
+    deps = [
+        "@gtest//:gtest_main",
+        "//source/car:car",
+    ],
+)
