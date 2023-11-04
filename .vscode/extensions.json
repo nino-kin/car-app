@@ -12,6 +12,7 @@
         "ms-vscode.cpptools",
         "ms-vscode.cpptools-extension-pack",
         "ms-vscode.cpptools-themes",
+        "ritwickdey.liveserver",
         "rogalmic.bash-debug",
         "streetsidesoftware.code-spell-checker"
     ]

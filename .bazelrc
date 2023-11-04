@@ -1,0 +1,19 @@
+try-import .bazelrc.local
+
+# Always set user root inside the project directory
+startup --output_user_root=.bazel
+
+build --cxxopt -std=c++14
+build --copt -Wall
+build --copt -Wextra
+build --copt -Werror
+
+# Config to build for optimized with debug information
+build:optdbg -c opt
+build:optdbg --copt -g
+
+build:opt -c opt
+build:opt --copt -g0
+
+# Reference
+# cf. https://github.com/bazelbuild/bazel/blob/master/.bazelrc

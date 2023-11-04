@@ -9,7 +9,7 @@
 
 ## About the application
 
-This is an awesome application that be able to simulate the car behavior with CARLA. For questions and feedback, please reach out to us [here](https://github.com/nino-kin/car-app/discussions).
+This is an awesome application that be able to simulate the car behavior with [CARLA](https://carla.org/). For questions and feedback, please reach out to us [here](https://github.com/nino-kin/car-app/discussions).
 
 ### Built With
 

@@ -1,0 +1,13 @@
+filegroup(
+    name = "driver_hdrs",
+    srcs = [
+        "driver.hpp",
+    ],
+)
+
+cc_library(
+    name = "driver",
+    hdrs = [":driver_hdrs"],
+    visibility = ["//:__subpackages__"],
+    include_prefix = "driver",
+)

@@ -1,0 +1,31 @@
+filegroup(
+    name = "car_hdrs",
+    srcs = [
+        "car.hpp",
+    ],
+)
+
+filegroup(
+    name = "car_srcs",
+    srcs = [
+        "car.cpp",
+    ],
+)
+
+cc_library(
+    name = "car",
+    srcs = [
+        ":car_srcs",
+    ],
+    hdrs = [
+        ":car_hdrs",
+    ],
+    deps = [
+        "//source:car_spec",
+        "//source/accelerator:accelerator",
+        "//source/brake:brake",
+        "//source/shift:shift",
+    ],
+    visibility = ["//:__subpackages__"],
+    include_prefix = "car",
+)

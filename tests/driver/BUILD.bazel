@@ -1,0 +1,11 @@
+cc_test(
+    name = "driver_tests",
+    srcs = ["test_driver.cpp"],
+    deps = [
+        "@gtest//:gtest_main",
+        "//source/driver:driver",
+        "//source/shift:shift",
+        "//source/car:car",
+    ],
+    visibility = ["//:__subpackages__"],
+)

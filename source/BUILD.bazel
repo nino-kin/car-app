@@ -1,0 +1,28 @@
+filegroup(
+    name = "car_spec_hdrs",
+    srcs = [
+        "include/car_spec.hpp",
+    ],
+)
+
+cc_library(
+    name = "car_spec",
+    hdrs = [
+        ":car_spec_hdrs",
+    ],
+    visibility = ["//:__subpackages__"],
+    strip_include_prefix = "include",
+)
+
+cc_binary(
+    name = "test_app",
+    srcs = ["main.cpp"],
+    deps = [
+        ":car_spec",
+        "//source/car",
+        "//source/driver",
+        "//source/shift",
+    ],
+    visibility = ["//:__subpackages__"],
+    linkopts = ["-lpthread"],
+)

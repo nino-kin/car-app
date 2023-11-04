@@ -1,0 +1,8 @@
+cc_test(
+    name = "shift_tests",
+    srcs = ["test_shift.cpp"],
+    deps = [
+        "@gtest//:gtest_main",
+        "//source/shift:shift",
+    ],
+)
