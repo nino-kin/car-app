@@ -7,6 +7,8 @@
 [![Watchers][watchers-shield]][watchers-url]
 [![MIT License][license-shield]][license-url]
 
+[![Build](https://github.com/nino-kin/car-app/actions/workflows/main.yaml/badge.svg)](https://github.com/nino-kin/car-app/actions/workflows/main.yaml)
+
 ## About the application
 
 This is an awesome application that be able to simulate the car behavior with [CARLA](https://carla.org/). For questions and feedback, please reach out to us [here](https://github.com/nino-kin/car-app/discussions).
