@@ -98,6 +98,14 @@ remove-image() {
   docker rmi $DOCKER_TAG
 }
 
+pre-commit() {
+  docker run --rm -t \
+  --name $DOCKER_CONTAINER \
+  $DOCKER_MOUNT_OPTION \
+  $DOCKER_TAG \
+  bash -c "$SCRIPT_DIR/pre-commit.sh"
+}
+
 clean() {
   docker run --rm -t \
   --name $DOCKER_CONTAINER \
@@ -144,21 +152,25 @@ echo "${1}"
   --remove-image | -remove-image | remove-image | --rmi | -rmi | rmi)
     remove-image
   ;;
+  --pre-commit | -pre-commit | pre-commit)
+    pre-commit
+  ;;
   --clean | -clean | clean)
     clean
   ;;
   *)
     echo "USAGE: $0 [command]"
     echo " Commands:"
-    echo "  setup     - Build an image from a Dockerfile"
-    echo "  build     - Perform the build"
-    echo "  tests     - Perform the tests"
-    echo "  coverage  - Produce code coverage reports"
-    echo "  package   - Cerate release packages"
-    echo "  run       - Run the docker container (-it mode)"
-    echo "  enter     - Enter the docker container"
-    echo "  rmi       - Remove the docker image"
-    echo "  clean     - Remove all artifacts"
+    echo "  setup      - Build an image from a Dockerfile"
+    echo "  build      - Perform the build"
+    echo "  tests      - Perform the tests"
+    echo "  coverage   - Produce code coverage reports"
+    echo "  package    - Cerate release packages"
+    echo "  run        - Run the docker container (-it mode)"
+    echo "  enter      - Enter the docker container"
+    echo "  rmi        - Remove the docker image"
+    echo "  clean      - Remove all artifacts"
+    echo "  pre-commit - Run pre-commit checks"
     echo ""
     echo "  all       - Perform all the above steps"
   ;;
