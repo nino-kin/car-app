@@ -9,10 +9,13 @@ RUN apt-get update && apt-get -y install \
     build-essential \
     python3.8 python3-pip python3-venv \
     lcov \
+    clang-format \
+    clang-tidy \
     curl && \
     curl -LO https://github.com/bazelbuild/bazelisk/releases/latest/download/bazelisk-linux-amd64 && \
     chmod +x bazelisk-linux-amd64 && \
-    mv bazelisk-linux-amd64 /usr/local/bin/bazelisk
+    mv bazelisk-linux-amd64 /usr/local/bin/bazelisk && \
+    pip install pre-commit
 
 ARG WORK_DIR=/app
 WORKDIR $WORK_DIR

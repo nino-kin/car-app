@@ -32,6 +32,12 @@ setup: ## Set up environment
 	@$(ROOT_DIR)/$(SCRIPT_DIR)/docker.sh setup
 	@echo "============================================================"
 
+pre-commit: ## Run pre-commit hooks
+	@echo -e "\nINFO: Checking $(PROJECT_NAME)..."
+	@echo "============================================================"
+	@$(ROOT_DIR)/$(SCRIPT_DIR)/docker.sh pre-commit
+	@echo "============================================================"
+
 build: ## Build the project
 	@echo -e "\nINFO: Building $(PROJECT_NAME)..."
 	@echo "============================================================"
