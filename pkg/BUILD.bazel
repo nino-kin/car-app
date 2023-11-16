@@ -1,0 +1,22 @@
+load("@rules_pkg//pkg:mappings.bzl", "pkg_filegroup")
+load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
+
+pkg_filegroup(
+    name = "binary_content",
+    srcs = [
+        "//source:binary_filegroup",
+    ],
+    visibility = ["//pkg:__pkg__"],
+)
+
+pkg_tar(
+    name = "car_app_pkg",
+    srcs = [
+        ":binary_content",
+    ],
+    extension = "tar.xz",
+    mode = "0444",
+    owner = "0.0",
+    strip_prefix = ".",
+    package_file_name = "car-app.tar.xz",
+)

@@ -1,3 +1,7 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
+load("@rules_pkg//pkg:mappings.bzl", "pkg_filegroup")
+load("@rules_pkg//pkg:mappings.bzl", "pkg_attributes", "pkg_files", "strip_prefix")
+
 filegroup(
     name = "car_spec_hdrs",
     srcs = [
@@ -25,4 +29,22 @@ cc_binary(
     ],
     visibility = ["//:__subpackages__"],
     linkopts = ["-lpthread"],
+)
+
+pkg_files(
+    name = "binary_package_files",
+    srcs = [
+        ":test_app",
+    ],
+    attributes = pkg_attributes("755"),
+    strip_prefix = strip_prefix.from_root(""),
+    visibility = ["//source/ecu:__pkg__"],
+)
+
+pkg_filegroup(
+    name = "binary_filegroup",
+    srcs = [
+        "//source:binary_package_files",
+    ],
+    visibility = ["//pkg:__pkg__"],
 )
