@@ -44,3 +44,9 @@ repos:
     hooks:
       - id: yamllint
         args: [-s]
+
+  - repo: https://github.com/thlorenz/doctoc
+    rev: v2.2.0
+    hooks:
+      - id: doctoc
+        args: [--github, --update-only]
