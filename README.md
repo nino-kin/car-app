@@ -9,6 +9,18 @@
 
 [![Build](https://github.com/nino-kin/car-app/actions/workflows/main.yaml/badge.svg)](https://github.com/nino-kin/car-app/actions/workflows/main.yaml)
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [About the application](#about-the-application)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+- [Contributing](#contributing)
+- [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## About the application
 
 This is an awesome application that be able to simulate the car behavior with [CARLA](https://carla.org/). For questions and feedback, please reach out to us [here](https://github.com/nino-kin/car-app/discussions).
