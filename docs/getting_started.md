@@ -5,14 +5,14 @@
 Before you set up the build environment in your local machine, please check the
 following requirements:
 
-* Operating system
-  * Linux (Ubuntu 20.04 and later, x86_64)
-* Docker
-  * Docker must be able to [run without `sudo`](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
-* Installation
-  * bash
-  * curl
-  * make
+- Operating system
+  - Linux (Ubuntu 20.04 and later, x86_64)
+- Docker
+  - Docker must be able to [run without `sudo`](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
+- Installation
+  - bash
+  - curl
+  - make
 
 ## Usage
 
@@ -21,17 +21,17 @@ following requirements:
 1. Clone this repository to your local machine
 1. You can set up the build environment with the following command:
 
-    ```bash
-    make setup
-    ```
+   ```bash
+   make setup
+   ```
 
-    * If the command completed successfully, you would be able to find the Docker
-    images created from Dockerfile as follows:
+   - If the command completed successfully, you would be able to find the Docker
+     images created from Dockerfile as follows:
 
-      ```bash
-      $ docker image ls | grep car-app
-      nino-kin/car-app            latest    f572acf8ada2   2 days ago    500MB
-      ```
+     ```bash
+     $ docker image ls | grep car-app
+     nino-kin/car-app            latest    f572acf8ada2   2 days ago    500MB
+     ```
 
 ### Build
 
