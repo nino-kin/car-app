@@ -2,7 +2,8 @@
 
 ## Prerequisites
 
-Before you set up the build environment in your local machine, please check the following requirements:
+Before you set up the build environment in your local machine, please check the
+following requirements:
 
 * Operating system
   * Linux (Ubuntu 20.04 and later, x86_64)
@@ -24,7 +25,8 @@ Before you set up the build environment in your local machine, please check the 
     make setup
     ```
 
-    * If the command completed successfully, you would be able to find the Docker images created from Dockerfile as follows:
+    * If the command completed successfully, you would be able to find the Docker
+    images created from Dockerfile as follows:
 
       ```bash
       $ docker image ls | grep car-app

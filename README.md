@@ -23,27 +23,31 @@
 
 ## About the application
 
-This is an awesome application that be able to simulate the car behavior with [CARLA](https://carla.org/). For questions and feedback, please reach out to us [here](https://github.com/nino-kin/car-app/discussions).
+This is an awesome application that be able to simulate the car behavior with [CARLA](https://carla.org/).
+For questions and feedback, please reach out to us [here](https://github.com/nino-kin/car-app/discussions).
 
 ### Built With
 
-* Bazel
-* Docker
-* GoogleTest
-* MkDocs
+- Bazel
+- Docker
+- GoogleTest
+- MkDocs
 
 ## Getting Started
 
-Go to [Onboarding](./docs/getting_started.md) to learn how to set up and use this application locally.
+Go to [Onboarding](./docs/getting_started.md) to learn how to set up and use
+this application locally.
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to learn,
+ inspire, and create. Any contributions you make are **greatly appreciated**.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+If you have a suggestion that would make this better, please fork the repo and
+create a pull request. You can also simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
 
-_For more information, please see [here](./CONTRIBUTING.md)_.
+*For more information, please see [here](./CONTRIBUTING.md)*.
 
 ## License
 
