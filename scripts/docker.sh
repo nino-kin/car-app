@@ -100,6 +100,7 @@ remove-image() {
 
 pre-commit() {
   docker run --rm -t \
+  --dns 8.8.8.8 \
   --name $DOCKER_CONTAINER \
   $DOCKER_MOUNT_OPTION \
   $DOCKER_TAG \
@@ -165,7 +166,7 @@ echo "${1}"
     echo "  build      - Perform the build"
     echo "  tests      - Perform the tests"
     echo "  coverage   - Produce code coverage reports"
-    echo "  package    - Cerate release packages"
+    echo "  package    - Create release packages"
     echo "  run        - Run the docker container (-it mode)"
     echo "  enter      - Enter the docker container"
     echo "  rmi        - Remove the docker image"
