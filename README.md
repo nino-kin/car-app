@@ -11,7 +11,6 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [About the application](#about-the-application)
   - [Built With](#built-with)
@@ -41,13 +40,13 @@ this application locally.
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn,
- inspire, and create. Any contributions you make are **greatly appreciated**.
+inspire, and create. Any contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please fork the repo and
 create a pull request. You can also simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
 
-*For more information, please see [here](./CONTRIBUTING.md)*.
+_For more information, please see [here](./CONTRIBUTING.md)_.
 
 ## License
 
@@ -55,6 +54,7 @@ Distributed under the MIT License. See [`LICENSE`](./LICENSE) for more informati
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/nino-kin/car-app.svg?style=for-the-badge
 [contributors-url]: https://github.com/nino-kin/car-app/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/nino-kin/car-app.svg?style=for-the-badge
