@@ -44,19 +44,19 @@ build: ## Build the project
 	@$(ROOT_DIR)/$(SCRIPT_DIR)/docker.sh build
 	@echo "============================================================"
 
-tests: ## Test the projct
+tests: ## Test the project
 	@echo -e "\nINFO: Testing $(PROJECT_NAME)..."
 	@echo "============================================================"
 	@$(ROOT_DIR)/$(SCRIPT_DIR)/docker.sh tests
 	@echo "============================================================"
 
-run: ## Run Docker conatainer
+run: ## Run Docker container
 	@echo -e "\nINFO: Running a container..."
 	@echo "============================================================"
 	@$(ROOT_DIR)/$(SCRIPT_DIR)/docker.sh run
 	@echo "============================================================"
 
-exec: ## Run Docker conatainer
+exec: ## Execute commands Docker container
 	@echo -e "\nINFO: You can execute commands in a running container..."
 	@echo "============================================================"
 	@$(ROOT_DIR)/$(SCRIPT_DIR)/docker.sh exec
@@ -76,7 +76,7 @@ coverage: ## Analyze coverage
 	@echo "================================================================================"
 
 package: ## Create release packages
-	@echo -e "\nINFO: Creating relase packages..."
+	@echo -e "\nINFO: Creating release packages..."
 	@echo "================================================================================"
 	@$(ROOT_DIR)/$(SCRIPT_DIR)/docker.sh package
 	@echo "================================================================================"
