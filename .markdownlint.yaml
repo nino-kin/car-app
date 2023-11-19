@@ -3,7 +3,7 @@ default: true
 
 line_length:
   code_blocks: false
-  table: false
+  tables: false
 
 no-duplicate-heading:
   siblings_only: true
