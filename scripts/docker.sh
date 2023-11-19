@@ -100,6 +100,7 @@ remove-image() {
 
 pre-commit() {
   docker run --rm -t \
+  --dns 8.8.8.8 \
   --name $DOCKER_CONTAINER \
   $DOCKER_MOUNT_OPTION \
   $DOCKER_TAG \
