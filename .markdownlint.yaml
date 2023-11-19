@@ -1,0 +1,9 @@
+---
+default: true
+
+line_length:
+  code_blocks: false
+  table: false
+
+no-duplicate-heading:
+  siblings_only: true

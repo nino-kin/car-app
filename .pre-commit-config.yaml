@@ -50,3 +50,8 @@ repos:
     hooks:
       - id: doctoc
         args: [--github, --update-only]
+
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.37.0
+    hooks:
+      - id: markdownlint
